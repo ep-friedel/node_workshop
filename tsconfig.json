@@ -7,8 +7,11 @@
   },
   "files": [
     "./node_modules/@types/express/index.d.ts",
-    "./node_modules/@types/node/index.d.ts"
+    "./node_modules/@types/node/index.d.ts",
+    "./node_modules/@types/mysql/index.d.ts",
+    "./node_modules/@types/node-fetch/index.d.ts",
+    "./node_modules/@types/node-geocoder/index.d.ts"
   ],
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "typings/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

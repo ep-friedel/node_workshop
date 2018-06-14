@@ -1,5 +1,5 @@
 export default function(list) {
-  return (req, res, next) => {
+  return function(req, res, next) {
     const fields = Object.keys(list);
 
     const data = {

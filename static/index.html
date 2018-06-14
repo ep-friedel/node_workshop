@@ -8,20 +8,22 @@
     <title>Document</title>
 </head>
 <script>
+
     function sendData() {
-        fetch('api/self', {
+        const output = document.getElementById('output')
+        fetch('api/location', {
             method: 'post',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
-                name: document.getElementById('test').value
+                city: document.getElementById('test').value
             })
         })
             .then((res) => res.json())
-            .then(data => {
-                if (!data.success) {
+            .then(({data, success}) => {
+                if (!success) {
                     alert('error')
                 } else {
-                    alert('win')
+                    output.innerHTML = JSON.stringify(data, false, 4);
                 }
 
             })
@@ -46,6 +48,8 @@
     <button onclick="getData()">Get</button>
     <input type="text" id="test" value="">
 
+
+    <div id="output" style="white-space: pre;"></div>
 
 </body>
 

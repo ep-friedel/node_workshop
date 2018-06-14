@@ -11,6 +11,8 @@ router.use(bodyparser.urlencoded({ extended: true }));
 
 router.use("/api", api);
 
+router.get("/self");
+
 router.get("/*", ExpressStatic("./static"));
 
 export default router;

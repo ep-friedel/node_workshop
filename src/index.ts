@@ -6,7 +6,6 @@ import router from "./router/router";
 const app = express();
 
 const server = http.createServer(app);
-let self;
 
 server.listen(
   {
@@ -20,3 +19,7 @@ server.listen(
 );
 
 app.use(router);
+
+app.get("*", (req, res) => {
+  res.send("hallo");
+});
